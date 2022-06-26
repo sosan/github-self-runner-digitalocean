@@ -55,3 +55,7 @@ https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-r
 Desde github añadimos un token llamado: `DIGITALOCEAN_ACCESS_TOKEN` con el PAT de digitalocean
 
 DIGITALOCEAN_ACCESS_TOKEN=dop_v1_d8eeed703665XXXXXXXXXXX18d0021319XXXXXXXXX(ejemplo)
+
+Imagen despliegue:
+
+![imagen](do_captura.png)
