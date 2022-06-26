@@ -4,7 +4,7 @@
 - aspectos de seguridad: https://github.com/dduzgun-security/github-self-hosted-runners
 
 Link directo a los runners:
-https://github.com/sosan/self-runner-on-vps-to-do/settings/actions/runners
+https://github.com/sosan/TU_REPO/actions/runners
 
 Esta en Settings -> Actions/Runners
 
@@ -21,11 +21,11 @@ Config basica runner:
 
 ```
 docker run -d --restart always --name github-runner \
-  -e REPO_URL="https://github.com/sosan/self-runner-on-vps-to-do" \
+  -e REPO_URL="https://github.com/sosan/github-self-runner-digitalocean" \
   -e RUNNER_NAME="linux-terraform" \
   -e RUNNER_TOKEN="AAPYBGPKQ3UMKEO5QECBGC3CXCH4I" \
-  -e RUNNER_WORKDIR="/tmp/github-runner-self-runner-on-vps-to-do" \
-  -v /tmp/github-runner-self-runner-on-vps-to-do:/tmp/github-runner-self-runner-on-vps-to-do \
+  -e RUNNER_WORKDIR="/tmp/github-self-runner-digitalocean" \
+  -v /tmp/github-self-runner-digitalocean:/tmp/github-self-runner-digitalocean \
   -v /var/run/docker.sock:/var/run/docker.sock \
   myoung34/github-runner:latest 
 ```
@@ -55,5 +55,3 @@ https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-r
 Desde github añadimos un token llamado: `DIGITALOCEAN_ACCESS_TOKEN` con el PAT de digitalocean
 
 DIGITALOCEAN_ACCESS_TOKEN=dop_v1_d8eeed703665XXXXXXXXXXX18d0021319XXXXXXXXX(ejemplo)
-
-PETA: al crear un nginx con helm 
