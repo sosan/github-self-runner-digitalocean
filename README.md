@@ -98,3 +98,6 @@ DIGITALOCEAN_ACCESS_TOKEN=dop_v1_d8eeed703665XXXXXXXXXXX18d0021319XXXXXXXXX(ejem
 Imagen despliegue:
 
 ![imagen](do_captura.png)
+
+
+> NOTA: En la github action terraform.yaml contiene una linea que solo lanzara el despliegue si el mensaje del commit contiene un /d
