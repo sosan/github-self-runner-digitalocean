@@ -1,4 +1,43 @@
-# github self hosted runner
+## Terraform
+Tres pasos del workflow:
+1. init
+2. plan
+3. apply
+
+### Init
+
+`terraform init` crea un lock llamado terraform.lock.hcl e inicializando el archivo de backend, plugins, etc...
+
+### Plan
+
+Compara los archivos de configuracion, el terraform tfstate, y el actual estado del cloud. Esquema:
+
+![imagen](./diagrama-flow-terraform.png)
+
+Usando el -o(output) generamos el archivo
+```
+terraform plan --out tfplan.bin
+```
+
+Visualizar el plan en formato json
+
+```
+terraform show -json tfplan.bin | jq '.' > tfplan.json
+```
+
+### Apply
+
+Ultimo paso, aplicar
+
+con `-auto-approve` elimina la necesidad de interaccion, no es recomendable. Si se utiliza en entornos de automatizacion, usar el apply sobre merges/aproved pull-request manuales.
+
+Listado de operaciones que se realizaran `Plan: 2 to add, 5 to change, 4 to destroy.`:
+- Add: los nuevos recursos que se añadiran a tu infra
+- Change: recursos existentes que cambiaran en tu infra
+- Destroy: recursos existentes que se borraran en tu infra
+
+
+## github self hosted runner
 
 - diferentes runners segun el entorno: https://jonico.github.io/awesome-runners/
 - aspectos de seguridad: https://github.com/dduzgun-security/github-self-hosted-runners
